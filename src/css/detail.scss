@@ -1,0 +1,107 @@
+.article-detail {
+    position: relative;
+    background-color: #fff;
+
+    .social-links {
+        position: absolute;
+        top: 560px;
+        right: 15px;
+
+        a {
+            display: block;
+        }
+
+        .social-link {
+            background-image: url('../images/redes.png');
+            width: 37px;
+            height: 37px;
+            display: block;
+            margin: 5px 0;
+
+            &.twitter {
+                background-position-y: -44px;
+            }
+
+            &.linkedin {
+                background-position-y: -88px;
+            }
+
+            &.attach {
+                background-position-y: -132px;
+            }
+
+            &.mail {
+                background-position-y: -175px;
+                width: 35px;
+                height: 26px;
+            }
+      }
+
+    }
+
+    .article-image {
+        height: 520px;
+        width: 100%;
+    }
+
+    .article-header {
+        padding-top: 304px;
+        position: absolute;
+        top: 0;
+        color: #fff;
+        left: 22%;
+        width: 50%;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 63px;
+        font-weight: 300;
+        line-height: 1.05;
+        margin-top: 26px;
+    }
+
+    .article-tag {
+        margin-right: 13px;
+    }
+
+    .description {
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 1.4;
+        padding-bottom: 40px;
+        border-bottom: 1px solid #ffe600;
+        margin: 0;
+    }
+
+    .article-text {
+        margin: 0 auto;
+        max-width: 784px;
+        padding: 40px 0;
+    }
+
+    p {
+        margin: 1em 0;
+        font-size: 17px;
+        line-height: 1.41;
+    }
+
+    h3 {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1.17;
+    }
+
+    h2 {
+        font-size: 34px;
+        font-weight: 600;
+        line-height: 0.82;
+        border-bottom: 1px solid #333;
+        width: 100%;
+        padding-bottom: 17px;
+    }
+
+    .article-section {
+        margin: 40px 0 60px;
+    }
+}

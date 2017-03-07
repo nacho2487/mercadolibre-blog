@@ -1,0 +1,19 @@
+{
+  "name": "blog-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "build": "gulp build",
+    "start": "npm run build && node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "ui-gulp_tasks": "^1.14.2"
+  }
+}
