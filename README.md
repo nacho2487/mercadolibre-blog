@@ -6,7 +6,7 @@
 
 1) Install dependencies:
 ```
-npm install
+npm install --registry http://registry.npm.ml.com
 ```
 
 2) Run the app:

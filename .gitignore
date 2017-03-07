@@ -9,5 +9,5 @@ idea/*
 mocks/test/generated/
 mocks/development/
 *.po
-./dist
-./build
+./dist/*
+./build/*
