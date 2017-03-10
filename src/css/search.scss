@@ -1,0 +1,60 @@
+.search {
+
+    .search-header {
+        margin: 28px 0 23px;
+    }
+
+    .search-content {
+        background-color: #fff;
+    }
+
+    .search-wrapper {
+        max-width: 984px;
+        margin: 0 auto;
+    }
+
+    .results-text {
+        font-size: 19px;
+        line-height: 1.26;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .results-word {
+        font-size: 29px;
+        font-weight: 600;
+        line-height: 0.83;
+        margin-top: 10px;
+    }
+
+    .results-count {
+        float: right;
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .search-row {
+        border-bottom: 1px solid #333;
+        padding: 35px 0;
+    }
+
+    h2 {
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 0.86;
+        margin: 25px 0 13px;
+    }
+
+    p {
+        font-size: 17px;
+        line-height: 1.41;
+    }
+
+    .article-tag {
+        margin-right: 25px;
+    }
+
+    .article-date {
+        color: #a5a5a5;
+    }
+}

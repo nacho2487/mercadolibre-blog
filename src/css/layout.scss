@@ -9,7 +9,7 @@ body {
     transform: rotate(180deg);
 }
 
-[class*=mesh-col-] {
+[class*='mesh-col-'] {
     padding: 7px;
 }
 
@@ -37,6 +37,6 @@ body {
 
 .article-date {
     font-size: 12px;
-  	font-weight: 500;
+    font-weight: 500;
     text-transform: uppercase;
 }
