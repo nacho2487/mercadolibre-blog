@@ -12,3 +12,14 @@
 .nav-footer-info-wrapper {
     padding: 0;
 }
+
+.nav-footer-primaryinfo {
+    border: 0;
+}
+
+@media (max-width: 767px) {
+  .nav-footer .nav-bounds {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}

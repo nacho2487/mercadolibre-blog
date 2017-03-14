@@ -32,17 +32,18 @@
         });
 
         searchRemove.addEventListener('click', function (event) {
-            event.preventDefault();
-            if (searchHeader.className.indexOf('open') > -1) {
-                searchHeader.classList.remove('open');
-            } else {
-                searchHeader.className += ' open';
-            }
-            inputSearch.value = '';
+          event.preventDefault();
+          if (searchHeader.className.indexOf('open') > -1) {
+              searchHeader.classList.remove('open');
+          } else {
+              searchHeader.className += ' open';
+          }
+          inputSearch.value = '';
         });
 
         searchButton.addEventListener('click', function (event) {
             event.preventDefault();
+
             if (searchHeader.className.indexOf('open') > -1) {
                 searchHeader.classList.remove('open');
             } else {

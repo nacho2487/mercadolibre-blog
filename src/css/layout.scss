@@ -40,3 +40,13 @@ body {
     font-weight: 500;
     text-transform: uppercase;
 }
+
+.bold {
+    font-weight: 700;
+}
+
+@media (max-width: 767px) {
+    .mobile-hide {
+        display: none;
+    }
+}

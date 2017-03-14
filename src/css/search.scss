@@ -5,12 +5,7 @@
     }
 
     .search-content {
-        background-color: #fff;
-    }
-
-    .search-wrapper {
-        max-width: 984px;
-        margin: 0 auto;
+        border-top: 1px solid #333;
     }
 
     .results-text {
@@ -32,29 +27,18 @@
         font-size: 15px;
         line-height: 1.6;
     }
+}
 
-    .search-row {
-        border-bottom: 1px solid #333;
-        padding: 35px 0;
-    }
+@media (max-width: 767px) {
+  .search {
 
-    h2 {
-        font-size: 28px;
-        font-weight: 500;
-        line-height: 0.86;
-        margin: 25px 0 13px;
-    }
+      .results-count {
+          display: none;
+      }
 
-    p {
-        font-size: 17px;
-        line-height: 1.41;
-    }
+      .search-header {
+          margin: 27px 13px 24px 27px;
+      }
 
-    .article-tag {
-        margin-right: 25px;
-    }
-
-    .article-date {
-        color: #a5a5a5;
-    }
+  }
 }

@@ -33,7 +33,7 @@ var paths = {
 
 var bundles = {
     scripts: {
-      'bundle': ['./src/js/*.js']
+      'bundle': ['./node_modules/waypoints/lib/noframework.waypoints.min.js', './src/js/*.js']
     },
     styles: {
       'bundle': ['./src/css/*.scss']

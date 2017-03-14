@@ -1,11 +1,28 @@
 .article-detail {
     position: relative;
     background-color: #fff;
+    .article-header-wrapper{
+      position: relative;
+    }
+    .image-shadow {
+      background: linear-gradient(to top, rgba(10,10,10,1) 0%, rgba(28,28,28,0.9) 9%, rgba(32,32,32,0.8) 15%, rgba(43,43,43,0.5) 24%, rgba(54,54,43,0) 35%);
+      z-index: 0;
+      width: 100%;
+      margin: 0;
+      height: 100%;
+    }
 
     .social-links {
         position: absolute;
         top: 560px;
         right: 15px;
+        &.sticky {
+            position: fixed;
+            top: 112px;
+            width: 85%;
+            left: 94%;
+        }
+
 
         a {
             display: block;
@@ -52,6 +69,7 @@
         left: 22%;
         width: 50%;
         text-align: center;
+        z-index: 1;
     }
 
     h1 {
@@ -67,7 +85,7 @@
 
     .description {
         font-size: 20px;
-        font-weight: bold;
+        font-weight: 700;
         line-height: 1.4;
         padding-bottom: 40px;
         border-bottom: 1px solid #ffe600;
@@ -94,7 +112,7 @@
 
     h2 {
         font-size: 34px;
-        font-weight: 600;
+        font-weight: 700;
         line-height: 0.82;
         border-bottom: 1px solid #333;
         width: 100%;
@@ -103,5 +121,65 @@
 
     .article-section {
         margin: 40px 0 60px;
+    }
+}
+
+@media (max-width: 767px) {
+    .article-detail {
+
+        h1 {
+            font-size: 26px;
+            font-weight: 600;
+            line-height: 1.15;
+        }
+
+        .social-links {
+            display: none;
+        }
+
+        .article-header {
+            position: relative;
+            padding: 0;
+            text-align: left;
+            color: #333;
+            width: 100%;
+            left: 0;
+            padding: 30px 27px 22px;
+        }
+
+        .article-image {
+            height: 182px;
+        }
+
+        .article-text {
+            padding: 32px 27px;
+        }
+
+        .description {
+            font-size: 15px;
+            padding-bottom: 25px;
+        }
+
+        .article-date {
+            float: right;
+        }
+
+        p {
+          font-size: 13px;
+          line-height: 1.31;
+        }
+
+        h3 {
+            font-size: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+        }
+
+        .article-section {
+            margin: 35px 0 0;
+        }
+
     }
 }
