@@ -52,8 +52,7 @@
                 width: 35px;
                 height: 26px;
             }
-      }
-
+        }
     }
 
     .article-image {
@@ -133,10 +132,14 @@
             line-height: 1.15;
         }
 
-        .social-links {
+        .image-shadow {
             display: none;
         }
 
+        .social-links {
+            display: none;
+        }
+        
         .article-header {
             position: relative;
             padding: 0;

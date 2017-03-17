@@ -1,62 +1,86 @@
 (function () {
-    window.addEventListener('load', function () {
-        var dropdown = document.querySelector('[data-toggle="dropdown"]');
-        var dropdownText = document.querySelector('[data-toggle="dropdown"] span');
-        var dropdownCategories = document.querySelectorAll('.categories-select a');
-        var searchButton = document.querySelector('.search-button');
-        var searchHeader = document.querySelector('.header-search');
-        var chevron = document.querySelector('.chevron');
-        var inputSearch = document.querySelector('.search-field');
-        var searchForm = document.getElementById('searchform');
-        var searchCategory = document.getElementById('searchCategory');
-        var primaryMenu = document.querySelector('.primary-menu');
-        var back = document.getElementById('blurBackground');
-        var searchRemove = document.getElementById('searchRemove');
+    var MeliBlog = function () {
+        this.dropdown = document.querySelector('[data-toggle="dropdown"]');
+        this.dropdownText = document.querySelector('[data-toggle="dropdown"] span');
+        this.dropdownCategories = document.querySelectorAll('.categories-select a');
+        this.searchButton = document.querySelector('.search-button');
+        this.searchHeader = document.querySelector('.header-search');
+        this.chevron = document.querySelector('.chevron');
+        this.inputSearch = document.querySelector('.search-field');
+        this.searchForm = document.getElementById('searchform');
+        this.searchCategory = document.getElementById('searchCategory');
+        this.primaryMenu = document.querySelector('.primary-menu');
+        this.back = document.getElementById('blurBackground');
+        this.searchRemove = document.getElementById('searchRemove');
+        this.menuSwitch = document.getElementById('nav-header-menu-switch');
+        this.shareSwitch = document.getElementById('nav-header-share-switch');
 
-        inputSearch.addEventListener('focus', function(event) {
-            back.className += ' back-blur';
-            primaryMenu.className += ' mobile-hide';
-            inputSearch.className += ' left-search-field'
+        this.init();
+    };
+
+    MeliBlog.prototype.init = function () {
+        if (this.menuSwitch.checked || this.shareSwitch.checked) {
+            this.toggleBackground(true);
+        }
+
+        this.bind();
+    };
+
+    MeliBlog.prototype.bind = function () {
+        var self = this;
+
+        this.menuSwitch.addEventListener('change', function() {
+            self.toggleSwitches(self.shareSwitch, this.checked);
+            self.toggleBackground(this.checked);
         });
 
-        inputSearch.addEventListener('blur', function(event) {
-            back.classList.remove('back-blur');
-            primaryMenu.classList.remove('mobile-hide');
-            inputSearch.classList.remove('left-search-field');
+        this.shareSwitch.addEventListener('change', function () {
+            self.toggleSwitches(self.menuSwitch, this.checked);
+            self.toggleBackground(this.checked);
+        });
+
+        this.inputSearch.addEventListener('focus', function () {
+            self.primaryMenu.className += ' mobile-hide';
+            this.className += ' left-search-field';
+        });
+
+        this.inputSearch.addEventListener('blur', function () {
+            self.primaryMenu.classList.remove('mobile-hide');
+            this.classList.remove('left-search-field');
 
         });
 
-        searchForm.addEventListener('submit', function(event) {
-            if(!inputSearch.value) event.preventDefault();
-            searchCategory.value = dropdownText.innerHTML;
+        this.searchForm.addEventListener('submit', function(event) {
+            if (!self.inputSearch.value) event.preventDefault();
+            self.searchCategory.value = self.dropdownText.innerHTML;
         });
 
-        searchRemove.addEventListener('click', function (event) {
+        this.searchRemove.addEventListener('click', function (event) {
             event.preventDefault();
-            if (searchHeader.className.indexOf('open') > -1) {
-                searchHeader.classList.remove('open');
+            if (self.searchHeader.className.indexOf('open') > -1) {
+                self.searchHeader.classList.remove('open');
             } else {
-                searchHeader.className += ' open';
+                self.searchHeader.className += ' open';
             }
-            inputSearch.value = '';
+            self.inputSearch.value = '';
         });
 
-        searchButton.addEventListener('click', function (event) {
+        this.searchButton.addEventListener('click', function (event) {
             event.preventDefault();
-            if (searchHeader.className.indexOf('open') > -1) {
-                searchHeader.classList.remove('open');
+            if (self.searchHeader.className.indexOf('open') > -1) {
+                self.searchHeader.classList.remove('open');
             } else {
-                searchHeader.className += ' open';
+                self.searchHeader.className += ' open';
             }
         });
 
-        dropdownCategories.forEach(function (category) {
+        this.dropdownCategories.forEach(function (category, index, categories) {
             category.addEventListener('click', function (event) {
                 var categoryClicked = event.target;
                 var categoryParentElement = categoryClicked.parentElement;
                 event.preventDefault();
-                dropdownText.innerHTML = categoryClicked.innerHTML;
-                dropdownCategories.forEach(function (dropCategory) {
+                self.dropdownText.innerHTML = categoryClicked.innerHTML;
+                categories.forEach(function (dropCategory) {
                     dropCategory.classList.remove('selected');
                 });
                 categoryClicked.className += 'selected';
@@ -65,21 +89,39 @@
                 } else {
                     categoryParentElement.parentElement.classList.remove('open');
                 }
-                chevron.classList.remove('rotate');
+                self.chevron.classList.remove('rotate');
             });
         });
 
-        dropdown.addEventListener('click', function (event) {
-            var dropdownListElement = dropdown.nextElementSibling;
+        this.dropdown.addEventListener('click', function (event) {
+            var dropdownListElement = this.nextElementSibling;
             event.preventDefault();
 
             if (dropdownListElement.className.indexOf('open') > -1) {
                 dropdownListElement.classList.remove('open');
-                chevron.classList.remove('rotate');
+                self.chevron.classList.remove('rotate');
             } else {
                 dropdownListElement.className += ' open';
-                chevron.setAttribute('class', this.getAttribute('class') + ' rotate');
+                self.chevron.setAttribute('class', this.getAttribute('class') + ' rotate');
             }
         });
+    };
+
+    MeliBlog.prototype.toggleSwitches = function (targetSwitch, checked) {
+        if (targetSwitch.checked && checked) {
+            targetSwitch.checked = false;
+        }
+    };
+
+    MeliBlog.prototype.toggleBackground = function (checked) {
+        if (checked && this.back.className.indexOf('back-blur') === -1) {
+            this.back.className += 'back-blur';
+        } else if (!checked) {
+            this.back.className = '';
+        }
+    }
+
+    window.addEventListener('load', function () {
+        var meliBlog = new MeliBlog();
     });
 }());
