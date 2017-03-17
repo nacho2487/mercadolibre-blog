@@ -112,7 +112,6 @@
     };
 
     MeliBlog.prototype.toggleSwitches = function (targetSwitch, checked) {
-        console.log(targetSwitch, checked);
         if (targetSwitch.checked && checked) {
             targetSwitch.checked = false;
         }
