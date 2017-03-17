@@ -55,7 +55,7 @@
 
     .article-header {
         padding-top: 48px;
-        max-width: 40%;
+        max-width: 46%;
         margin-left: 45px;
         position: absolute;
         top: 0;
@@ -112,7 +112,7 @@
     }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 767px) {
     .nav-main-content [class*='mesh-col-'] {
         padding: 0;
     }

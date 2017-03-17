@@ -19,7 +19,7 @@
     };
 
     MeliBlog.prototype.init = function () {
-        if (this.menuSwitch.checked || this.shareSwitch.checked) {
+        if (this.menuSwitch.checked || (this.shareSwitch && this.shareSwitch.checked)) {
             this.toggleBackground(true);
         }
 
@@ -30,14 +30,18 @@
         var self = this;
 
         this.menuSwitch.addEventListener('change', function() {
-            self.toggleSwitches(self.shareSwitch, this.checked);
+            if (self.shareSwitch) {
+                self.toggleSwitches(self.shareSwitch, this.checked);
+            }
             self.toggleBackground(this.checked);
         });
 
-        this.shareSwitch.addEventListener('change', function () {
-            self.toggleSwitches(self.menuSwitch, this.checked);
-            self.toggleBackground(this.checked);
-        });
+        if (this.shareSwitch) {
+            this.shareSwitch.addEventListener('change', function () {
+                self.toggleSwitches(self.menuSwitch, this.checked);
+                self.toggleBackground(this.checked);
+            });
+        }
 
         this.inputSearch.addEventListener('focus', function () {
             self.primaryMenu.className += ' mobile-hide';
@@ -108,6 +112,7 @@
     };
 
     MeliBlog.prototype.toggleSwitches = function (targetSwitch, checked) {
+        console.log(targetSwitch, checked);
         if (targetSwitch.checked && checked) {
             targetSwitch.checked = false;
         }
