@@ -1,3 +1,7 @@
+header.nav-header {
+    background-color: #FFE600;
+}
+
 .nav-header.nav-header-sticky+main>.nav-bounds,
 .nav-header.nav-header-sticky+main>.nav-main-content,
 .nav-header.nav-header-sticky~main>.nav-bounds,
@@ -53,12 +57,12 @@
 }
 
 .main-navigation .primary-menu .active {
-    border-bottom: 4px solid #ffe600;
+    border-bottom: 4px solid #FFE600;
     font-weight: 700;
 }
 
 .main-navigation .primary-menu li a:hover {
-    border-bottom: 4px solid #ffe600;
+    border-bottom: 4px solid #FFE600;
 }
 
 .main-navigation .primary-menu li a {
@@ -167,8 +171,77 @@
     font-weight: 600;
 }
 
+#nav-header-share-switch {
+    display: none;
+}
+
 .header-search .categories-select.open {
     display: block;
+}
+
+[for="nav-header-share-switch"] {
+    display: none;
+    position: absolute;
+    right: 50px;
+    top: 0;
+    width: 50px;
+    height: 50px;
+}
+
+.mobile-share-holder {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav-header-share-switch:checked+.mobile-share {
+    display: block;
+}
+
+.mobile-share-holder .mobile-share {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 6.5px;
+}
+
+.mobile-share__list {
+    margin-top: 9px;    
+}
+
+.mobile-share__list-item:first-child .social-link{
+    margin-top: 0;
+}
+
+.social-link {
+    background-image: url('../images/redes-mobile.png');
+    width: 37px;
+    height: 37px;
+    display: block;
+    margin: 5px 0;
+    text-indent: 9999px;
+    overflow: hidden;
+
+    &.twitter {
+        background-position-y: -44px;
+    }
+
+    &.linkedin {
+        background-position-y: -88px;
+    }
+
+    &.whatsapp {
+        background-position-y: -132px;
+    }
+
+    &.mail {
+        background-position-y: -175px;
+        width: 35px;
+        height: 26px;
+    }
 }
 
 @media (max-width: 1100px) {
@@ -197,6 +270,10 @@
 
     .header-search.open {
         display: none;
+    }
+
+    [for="nav-header-share-switch"] {
+        display: block;
     }
 
     .blog-text {
