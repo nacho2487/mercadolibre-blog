@@ -54,6 +54,10 @@ body {
     .mobile-hide {
         display: none;
     }
+
+    .global-wrapper {
+        margin: 0;
+    }
 }
 @media (min-width: 767px) {
     .nav-bounds {

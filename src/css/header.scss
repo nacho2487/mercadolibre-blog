@@ -271,7 +271,13 @@ header.nav-header {
     }
 }
 @media (max-width: 767px) {
-
+    
+    header.nav-header {
+        .nav-logo {
+            left: 10px;
+        }
+    }
+    
     .header-search.open {
         display: none;
     }
