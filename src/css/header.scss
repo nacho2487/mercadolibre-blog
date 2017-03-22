@@ -1,5 +1,9 @@
 header.nav-header {
     background-color: #FFE600;
+    border: none;
+    .nav-logo {
+        left: 0;
+    }
 }
 
 .nav-header.nav-header-sticky+main>.nav-bounds,
@@ -21,7 +25,7 @@ header.nav-header {
     width: 39px;
     top: 0px;
     position: absolute;
-    left: 190px;
+    left: 180px;
 }
 
 .search-button {
@@ -37,13 +41,13 @@ header.nav-header {
 }
 
 .main-navigation nav {
-    max-width: 1220px;
+    max-width: 1184px;
     margin: 0 auto;
     position: relative;
 }
 
 .main-navigation nav .primary-menu {
-    padding: 0 15px;
+    padding: 0 15px 0 0;
 }
 
 .main-navigation .primary-menu li {
@@ -73,7 +77,7 @@ header.nav-header {
     border-bottom: 4px solid #fff;
 }
 .main-navigation .primary-menu li:first-child a {
-    padding: 16px 0 6px;
+    padding: 16px 16px 6px;
 }
 
 .main-navigation .primary-menu li a:visited {
@@ -81,7 +85,7 @@ header.nav-header {
 }
 
 .nav-main-content {
-    max-width: 1220px;
+    max-width: 1184px;
     margin: 0 auto;
 }
 
@@ -99,7 +103,7 @@ header.nav-header {
 .header-search .search-field {
     padding: 15px;
     height: 54px;
-    border: solid 1px #c2c2c2;
+    border: none;
     font-size: 14px;
     width: 373px;
     background-image: url('../images/cross.svg');
@@ -279,7 +283,9 @@ header.nav-header {
     .blog-text {
         left: 65px;
     }
-
+    .header-search .search-field {
+        border-bottom: 1px solid #c2c2c2;
+    }
     .search-button {
         display: none;
     }

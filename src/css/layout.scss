@@ -45,8 +45,18 @@ body {
     font-weight: 700;
 }
 
+/* -- removing mesh element left padding -- */
+.global-wrapper {
+    margin: 0 -7px;
+}
+
 @media (max-width: 767px) {
     .mobile-hide {
         display: none;
+    }
+}
+@media (min-width: 767px) {
+    .nav-bounds {
+        max-width: 1184px;
     }
 }
